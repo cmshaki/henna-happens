@@ -1,0 +1,54 @@
+[
+  {
+    "date": "Monday, January 23, 2023",
+    "time": "4:00PM - 10:00PM",
+    "location": "1525 Bernice St Honolulu,  HI 96817 United States",
+    "description": "FarmLovers Markets is stepping out for a brand-new event! We are all about community, health, family and fun, and we have created an experience for families to come and participate in entertaining and educational activities together. Admission is free and some events will have nominal fees.",
+    "img": {
+      "src": "/images/events/event-1.jpeg",
+      "alt": "an event outside bishop museum",
+      "width": 800,
+      "height": 400,
+      "caption": "Bishop Museum After Hours"
+    }
+  },
+  {
+    "date": "Saturday, February 11, 2023",
+    "time": "4:00PM - 8:00PM",
+    "location": "315 uluniu st kailua, hi, 96734",
+    "description": "FarmLovers Markets is stepping out for a brand-new event! We are all about community, health, family and fun, and we have created an experience for families to come and participate in entertaining and educational activities together. Admission is free and some events will have nominal fees.",
+    "img": {
+      "src": "/images/events/event-2.jpeg",
+      "alt": "a lady doing the lotus pose",
+      "width": 1162,
+      "height": 775,
+      "caption": "Holistic & Wellness Market"
+    }
+  },
+  {
+    "date": "Friday, February 17, 2023",
+    "time": "4:00PM - 10:00PM",
+    "location": "1011 Ala Moana Blvd Honolulu, HI 96814 United States",
+    "description": "FarmLovers Markets is stepping out for a brand-new event! We are all about community, health, family and fun, and we have created an experience for families to come and participate in entertaining and educational activities together. Admission is free and some events will have nominal fees.",
+    "img": {
+      "src": "/images/events/event-3.jpeg",
+      "alt": "a lamb across a field",
+      "width": 1158,
+      "height": 772,
+      "caption": "FarmLovers Family Fun Fest"
+    }
+  },
+  {
+    "date": "Saturday, November 19, 2022",
+    "time": "4:00PM - 8:00PM",
+    "location": "Honolulu Night Market at Our Kaka'ako",
+    "description": "FarmLovers Markets is stepping out for a brand-new event! We are all about community, health, family and fun, and we have created an experience for families to come and participate in entertaining and educational activities together. Admission is free and some events will have nominal fees.",
+    "img": {
+      "src": "/images/events/event-4.jpeg",
+      "alt": "beachside at honolulu",
+      "width": 1158,
+      "height": 868,
+      "caption": "Honolulu Night Market at Our Kaka'ako"
+    }
+  }
+]

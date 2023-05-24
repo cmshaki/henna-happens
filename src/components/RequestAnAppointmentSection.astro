@@ -1,0 +1,65 @@
+---
+//@ts-ignore
+import { BackgroundImage } from "astro-imagetools/components";
+
+const { src, classes } = Astro.props;
+---
+
+<section {...classes ? { class: classes } : Object.create(null)}>
+  <BackgroundImage
+    src={src}
+    format="webp"
+    tag="div"
+    backgroundSize="cover"
+    quality={90}
+  >
+    <div class="bg-shadow">
+      <div class="px-5 text-white sm:px-16">
+        <div class="mx-auto max-w-7xl py-8 sm:py-20">
+          <h2
+            class="font-cinzel mb-2.5 px-5 text-center text-3xl sm:mb-5 sm:px-0 sm:text-6xl"
+          >
+            Request an<br />Appointment today!
+          </h2>
+          <h4
+            class="font-cinzel sm:mb-15 mb-7 text-center text-xl leading-none sm:text-2xl"
+          >
+            WILL TRAVEL TO YOU
+          </h4>
+          <div
+            class="mb-7 flex grow flex-col gap-5 sm:mb-20 sm:items-center sm:gap-10 lg:flex-row lg:items-start"
+          >
+            <div class="inline-flex grow gap-10 sm:w-2/4 lg:w-auto lg:flex-1">
+              <div class="hidden flex-1 lg:block"></div>
+              <div class="flex-1 text-center">
+                For parties & events, design books (optional), aftercare sheets,
+                signage and artistry will be provided at the location of choice.
+              </div>
+            </div>
+            <div
+              class="inline-flex flex-1 grow gap-10 sm:justify-center lg:justify-start"
+            >
+              <div
+                class="inline-flex items-end text-center sm:w-2/4 lg:w-auto lg:flex-1"
+              >
+                Looking for something smaller? Find our Booth Location!
+              </div>
+              <div class="hidden flex-1 lg:block"></div>
+            </div>
+          </div>
+          <div class="flex grow justify-center">
+            <div class="hidden flex-1 sm:block"></div>
+            <a
+              href="/request"
+              class="flex-2 border-brand-black leading-140 text-brand-black border bg-white px-5 py-4 text-center"
+              type="button"
+            >
+              Make An Appointment With An Artist
+            </a>
+            <div class="hidden flex-1 sm:block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </BackgroundImage>
+</section>

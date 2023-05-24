@@ -1,0 +1,46 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const { imageArr } = Astro.props;
+---
+
+<div class="flex grow flex-col gap-10 sm:flex-row">
+  <div class="flex flex-1 grow">
+    <figure class="relative inline-flex flex-1 grow flex-col">
+      <Image
+        class="mb-5 flex-1 object-cover sm:mb-0"
+        src={imageArr[0].src}
+        alt={imageArr[0].alt}
+        width={imageArr[0].width}
+        height={imageArr[0].height}
+        format="webp"
+        quality={90}
+      />
+      <figcaption
+        class="sm:bg-white-700 leading-121 text-brand-light top-0 w-full text-sm sm:absolute sm:px-5 sm:py-5 sm:text-base"
+      >
+        <span class="mb-2.5 inline-block">{imageArr[0].caption[0]}</span><br />
+        {imageArr[0].caption[1]}
+      </figcaption>
+    </figure>
+  </div>
+  <div class="flex flex-1 grow">
+    <figure class="relative inline-flex flex-1 grow flex-col">
+      <Image
+        class="mb-5 flex-1 object-cover sm:mb-0"
+        src={imageArr[1].src}
+        alt={imageArr[1].alt}
+        width={imageArr[1].width}
+        height={imageArr[1].height}
+        format="webp"
+        quality={90}
+      />
+      <figcaption
+        class="sm:bg-white-700 leading-121 text-brand-light top-0 w-full text-sm sm:absolute sm:px-5 sm:py-5 sm:text-base"
+      >
+        <span class="mb-2.5 inline-block">{imageArr[1].caption[0]}</span><br />
+        {imageArr[1].caption[1]}
+      </figcaption>
+    </figure>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+[
+  {
+    "head": "services",
+    "tab": [
+      {
+        "title": "BRIDAL HENNA",
+        "img": {
+          "src": "/images/bride-with-flowers.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Allows time for two wrap-around detailed hand designs from slightly above the wrists down to fingers, palms, and medium coverage feet using Ash Kumar Certified bridal techniques. Designs can be tailored to your specific needs and are customized for each bride."
+      },
+      {
+        "title": "WEDDING PARTY",
+        "img": {
+          "src": "/images/henna-lady-lying-on-sofa.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Adorn your wedding guests in custom one-of-a-kind freestyle henna designs. Small to medium coverage strip designs. Rate includes 4x2' table with cloth, signage, two chairs, aftercare sheets for each guest."
+      }
+    ]
+  },
+  {
+    "head": "make an appointment",
+    "tab": [
+      {
+        "title": "Individual Appointment",
+        "img": {
+          "src": "/images/henna-hand-holding-grape.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Allows enough time for two medium coverage detailed designs, one extra large design for one person, or split the cost with up to 8 individuals for more simple designs."
+      },
+      {
+        "title": "Belly Henna",
+        "img": {
+          "src": "/images/henna-belly.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Adorn your baby bump and celebrate new life with your custom belly henna. Great for memorable maternity photoshoots."
+      },
+      {
+        "title": "Henna Crown",
+        "img": {
+          "src": "/images/henna-crown.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "A henna crown is an awesome empowering transition for all the chemo warriors out there. Special 50% off discounted rate, travel included."
+      }
+    ]
+  },
+  {
+    "head": "make an appointment",
+    "tab": [
+      {
+        "title": "Henna Party",
+        "img": {
+          "src": "/images/henna-close-hand.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Have a private party or corporate event? Henna makes a great addition and leaves a red/brown stain on the skin. Party designs take about 3-5 minutes each or less to ensure each guest can get at least one simple design."
+      },
+      {
+        "title": "White Henna Glam Party",
+        "img": {
+          "src": "/images/henna-lady-on-surf-board.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "White henna glam lasts 1-3 days and is water resistant. Latex-free, dries in 5 minutes, ready to wear, and great for those who want to try something different."
+      },
+      {
+        "title": "Jagua Party",
+        "img": {
+          "src": "/images/henna-hand.png",
+          "alt": "A beautiful henna bride with flowers",
+          "width": 580,
+          "height": 271
+        },
+        "content": "Jagua stains a navy/black design on the skin and can get washed the same day, as soon as 2-3hrs after application."
+      }
+    ]
+  }
+]

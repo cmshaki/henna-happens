@@ -1,0 +1,96 @@
+---
+import { Image } from "@astrojs/image/components";
+import Layout from "../layouts/Layout.astro";
+import events from "../data/events.json";
+import {
+  CalendarIcon,
+  ClockIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
+---
+
+<Layout>
+  <main class="sm:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16 sm:py-10">
+    <h2 class="font-cinzel sm:mb-15 mb-5 text-3xl sm:text-6xl">
+      Upcoming Public Events
+    </h2>
+    <div class="sm:gap-4% flex flex-col flex-wrap sm:flex-row">
+      {
+        events.map(({ date, time, location, description, img }, index) => (
+          <div class="shadow-3xl lg:basis-48% mb-10 inline-flex flex-col self-start">
+            <figure class="inline-flex h-52 items-center overflow-hidden">
+              <Image
+                class="inline-flex h-full object-cover"
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+                format="webp"
+                quality={90}
+              />
+            </figure>
+            <div class="text-brand-light-500 p-5 sm:p-7">
+              <div class="mb-5 flex flex-col justify-between sm:mb-6 sm:flex-row">
+                <span>
+                  <CalendarIcon className="inline h-5" />
+                  {date}
+                </span>
+                <span class="hidden sm:inline">
+                  <ClockIcon className="inline h-5 " />
+                  {time}
+                </span>
+              </div>
+              <div class="mb-5 sm:mb-7">
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(
+                    location
+                  )}`}
+                  target="_blank"
+                >
+                  <MapPinIcon className="inline h-5" />
+                  {location}
+                </a>
+              </div>
+              <div class="mb-5 sm:hidden">
+                <ClockIcon className="inline h-5 " />
+                {time}
+              </div>
+              <div class="mb-7 hidden" id={`events-description-${index}`}>
+                {description}
+              </div>
+              <div class="flex flex-col justify-between gap-5 sm:flex-row sm:gap-0">
+                <button
+                  class="events-learn-more leading-140 px-17 xl:px-17 border-brand-light-500 text-brand-light-500 border py-4 lg:px-10"
+                  type="button"
+                >
+                  Learn More
+                </button>
+                <a
+                  href="/request"
+                  class="leading-140 px-17 xl:px-17 bg-black py-4 text-center text-white sm:inline-block lg:px-10"
+                  type="button"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+<script>
+  const allLearnMoreButtons = document.querySelectorAll(".events-learn-more");
+  let description;
+  allLearnMoreButtons.forEach((item, index) =>
+    item.addEventListener("click", () => {
+      description = document.querySelector("#events-description-" + index);
+      if (!description?.hasAttribute("style")) {
+        description?.setAttribute("style", "display: block");
+      } else {
+        description?.removeAttribute("style");
+      }
+    })
+  );
+</script>

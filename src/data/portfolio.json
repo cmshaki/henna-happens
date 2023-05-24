@@ -1,0 +1,72 @@
+[
+  {
+    "src": "/images/portfolio/henna-couple.png",
+    "alt": "a couple covered in henna in each others embrace",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 581,
+    "height": 876
+  },
+  {
+    "src": "/images/portfolio/henna-hand-2.png",
+    "alt": "hands covered in henna",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 270,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/henna-feet.png",
+    "alt": "feet covered in white henna",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 269,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/two-henna-hands.png",
+    "alt": "two henna hands displaying symmetrical patterns",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 270,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/henna-hand-3.png",
+    "alt": "a henna hand showing some artistic design",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 269,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/henna-model-black-white.png",
+    "alt": "a modal posing while covered in henna",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 581,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/henna-swim-suit-model.png",
+    "alt": "a model posing while covered in henna",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 581,
+    "height": 350
+  },
+  {
+    "src": "/images/portfolio/henna-bride-flowers.png",
+    "alt": "a lady covered in henna with flowers",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 580,
+    "height": 700
+  },
+  {
+    "src": "/images/portfolio/henna-lady-casual.png",
+    "alt": "a lady dressed casually in henna",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 581,
+    "height": 876
+  },
+  {
+    "src": "/images/portfolio/henna-hand.png",
+    "alt": "a henna hand showing an intricate pattern",
+    "caption": ["Aliqua id fugiat nostrud", "01/02/2023"],
+    "width": 580,
+    "height": 700
+  }
+]

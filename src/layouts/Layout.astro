@@ -1,0 +1,66 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+
+const { path } = Astro.props;
+
+const links = [
+  {
+    name: "about",
+    path: "/about",
+  },
+  {
+    name: "portfolio",
+    path: "/portfolio",
+  },
+  {
+    name: "services",
+    path: "/#services-section",
+  },
+  {
+    name: "location",
+    path: "/#location-section",
+  },
+  {
+    name: "events",
+    path: "/events",
+  },
+  {
+    name: "FAQ",
+    path: "/#faq-section",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-X9RTXZNHFW"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-X9RTXZNHFW");
+    </script>
+  </head>
+
+  <body class="font-montse text-brand-black leading-tight">
+    <!-- define links here and pass it into our Navbar -->
+    <Navbar
+      links={links}
+      client:load
+      {...path ? { path } : Object.create(null)}
+    />
+    <slot />
+    <!-- you can pass a links props foor the Footer as well -->
+    <Footer links={links} />
+  </body>
+</html>

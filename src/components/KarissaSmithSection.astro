@@ -1,0 +1,136 @@
+---
+import { Image } from "@astrojs/image/components";
+//@ts-ignore
+import { BackgroundImage } from "astro-imagetools/components";
+---
+
+<div
+  class="relative mb-10 flex flex-col gap-5 sm:items-center sm:justify-center sm:gap-0 xl:mb-20 xl:flex-row"
+>
+  <div class="mb-2.5 flex-1 sm:mb-0 sm:self-start xl:self-auto">
+    <div class="text-center xl:left-0 xl:text-left">
+      <h1
+        class="font-cinzel text-3.5xl sm:mb-15 leading-none tracking-tight sm:z-10 sm:text-7xl xl:mb-0"
+      >
+        Karissa<br class="hidden xl:inline" /><span class="xl:hidden"
+          >&nbsp;</span
+        >Smith
+      </h1>
+    </div>
+    <div class="absolute bottom-0 left-0 hidden xl:block">
+      <p>
+        Karissa is the artist behind<br />Henna Happens, a professionally<br
+        />and internationally trained<br />henna artist.
+      </p>
+    </div>
+  </div>
+  <figure class="relative justify-end">
+    <BackgroundImage
+      src="/images/rectangle-34.png"
+      format="webp"
+      tag="div"
+      backgroundSize="cover"
+      quality={90}
+    >
+      <div class="px-13 py-2.5 sm:px-20 sm:py-12">
+        <Image
+          src="/images/rectangle-35.png"
+          alt="Portrait of Karissa Smith"
+          format="webp"
+          width={403}
+          height={550}
+          quality={90}
+        />
+        <figcaption
+          class="ml-min-5.5 text-brand-green absolute bottom-0 left-full hidden items-start xl:inline-flex"
+        >
+          <h3 class="font-cinzel left-4 text-9xl leading-none text-white">“</h3>
+          <h3 class="font-cinzel whitespace-nowrap text-4xl leading-none">
+            <span class="text-white">A</span><span
+              class="via-brand-green to-brand-green bg-gradient-to-r from-white from-55% via-55% to-100% bg-clip-text text-transparent"
+              >m</span
+            >et minim<br /><span class="text-white">m</span><span
+              class="via-brand-green to-brand-green bg-gradient-to-r from-white from-55% via-55% to-100% bg-clip-text text-transparent"
+              >o</span
+            >lliteniam
+          </h3>
+        </figcaption>
+      </div>
+    </BackgroundImage>
+  </figure>
+  <div
+    class="sm:mt-5 sm:w-full sm:text-center xl:mt-0 xl:w-auto xl:flex-1 xl:text-left"
+  >
+    <p class="text-center xl:hidden">
+      Karissa is the artist behind<br class="sm:hidden" /> Henna Happens, a professionally
+      <br />and internationally trained <br class="hidden" />henna artist.
+    </p>
+  </div>
+</div>
+<div class="flex grow flex-col xl:flex-row xl:gap-10">
+  <div class="inline-flex flex-1 grow flex-col sm:flex-row sm:gap-10">
+    <figure class="inline-flex flex-1 items-end justify-end">
+      <Image
+        class="hidden w-full object-cover sm:block sm:h-full xl:h-auto"
+        src="/images/karissa-working.png"
+        alt="Karissa Smith Working"
+        format="webp"
+        width={270}
+        height={271}
+        quality={90}
+      />
+    </figure>
+    <div class="relative flex-1">
+      <p class="text-brand-light mb-5">
+        <span
+          class="font-cinzel text-6.5xl text-brand-green float-left pt-1.5 leading-3"
+          >A</span
+        >natural artist at heart, she was introduced to the medium in 2014 and
+        instantly fell in love. With a passionate 8 years of professional
+        experience, she specializes in bridal, Indo-Arabic, Moroccan, and
+        contemporary designs; each design is uniquely freehand and can tailored
+        for you, the possibilities are endless.
+      </p>
+      <p class="text-brand-light mb-7 sm:mb-10">
+        Our fresh henna and jagua products are all natural, plant based and hand
+        mixed in small batches for the highest staining quality and will
+        definitely be a hit at your next party, wedding, or event.
+      </p>
+      <span
+        class="mb-5 block text-xl font-semibold xl:absolute xl:bottom-0 xl:left-0 xl:mb-0 xl:whitespace-nowrap"
+      >
+        Book now for your one of a kind design!
+      </span>
+      <a
+        href="/request"
+        class="sm:justify-none leading-140 inline-flex w-full justify-center bg-black py-4 text-white sm:w-auto sm:px-20 xl:hidden"
+        type="button"
+      >
+        Meet the artist
+      </a>
+    </div>
+  </div>
+  <div
+    class="order-first inline-flex flex-1 flex-col justify-end sm:order-none"
+  >
+    <figure class="xl:mb-30 mb-5 hidden xl:block">
+      <Image
+        src="/images/karissa-working-2.png"
+        alt="Karissa Smith Working"
+        format="webp"
+        width={580}
+        height={271}
+        quality={90}
+      />
+    </figure>
+    <div class="hidden sm:text-right xl:block">
+      <a
+        href="/request"
+        class="sm:justify-none leading-140 inline-flex w-full justify-center bg-black py-4 text-white sm:w-auto sm:px-20"
+        type="button"
+      >
+        Meet the artist
+      </a>
+    </div>
+  </div>
+</div>

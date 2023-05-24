@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import KarissaSmithSection from "../components/KarissaSmithSection.astro";
+
+//@ts-ignore
+import { BackgroundImage } from "astro-imagetools/components";
+
+// Image imports
+import { Image } from "@astrojs/image/components";
+import RequestAnAppointmentSection from "src/components/RequestAnAppointmentSection.astro";
+import Experience from "src/components/Experience.astro";
+
+//@ts-ignore
+// import exampleImage from "public:images/some-image.png?w=200&format=webp&q=90";
+// w=200 gives a set width
+// format=webp will convert the image to a webp file for you on build
+// q=90 is the quality that the image will be reduced to, try to use 90 everywhere on all images where possible
+
+// when using this import method, you'll have to put //@ts-ignore at the top
+// so VS Code (or your editor of choice) doesn't throw syntax errors
+---
+
+<Layout path="/about">
+  {/* Landing Page Section */}
+  <main class="sm:mb-15 xl:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16 sm:py-10">
+    <KarissaSmithSection />
+  </main>
+
+  {/* Experience, Course, Certification */}
+  <section class="sm:mb-15 xl:mb-35 mb-7">
+    <div class="flex flex-nowrap justify-center text-center">
+      <h1
+        class="font-cinzel text-3.5xl sm:mb-15 mb-7 leading-none sm:mt-5 sm:whitespace-nowrap sm:text-6xl lg:text-7xl"
+      >
+        Experience, Course, Certification
+      </h1>
+    </div>
+    <div class="mx-auto max-w-7xl p-5 sm:px-16 sm:py-10">
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="inline-flex flex-1 gap-10">
+          <figure class="hidden sm:block">
+            <Image
+              class="object-cover"
+              src="/images/karissa-smiling-with-henna-hands.png"
+              alt="karissa smiling in a self embrace with henna hands"
+              width={270}
+              height={271}
+              format="webp"
+              quality={90}
+            />
+          </figure>
+          <figure class="lg:mt-25 inline-flex flex-1 grow sm:flex-none">
+            <Image
+              src="/images/karissa-stretched-out-henna-hands.png"
+              alt="karissa stretching her hands out towards the screen"
+              class="flex-1 object-cover"
+              width={270}
+              height={400}
+              format="webp"
+              quality={90}
+            />
+          </figure>
+        </div>
+        <div class="order-first flex flex-1 flex-col sm:order-none">
+          <div class="mb-5 inline-flex items-center gap-5">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:block lg:text-4xl">
+              AK Professional Henna<br /> Course Graduate
+            </h3>
+          </div>
+          <div class="mb-5 inline-flex items-center gap-5">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:block lg:text-4xl">
+              AK Bridal Master<br /> Class graduate
+            </h3>
+          </div>
+          <div class="mb-5 inline-flex items-center gap-5">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:block lg:text-4xl">
+              Henna Con<br class="sm:hidden" /> 2018
+            </h3>
+          </div>
+          <div class="inline-flex items-center gap-5">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:block lg:text-4xl">
+              8 years full time<br /> experience
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Who I've worked with section */}
+  <section
+    class="sm:mb-15 lg:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16 sm:py-10"
+  >
+    <h2 class="font-cinzel sm:mb-15 mb-5 text-3xl sm:text-6xl">
+      Who I worked with
+    </h2>
+    <Experience />
+  </section>
+
+  {/* Request an appointment section */}
+  <RequestAnAppointmentSection src="/images/henna-lady-on-the-beach.jpg" />
+</Layout>

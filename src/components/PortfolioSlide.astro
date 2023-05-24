@@ -1,0 +1,202 @@
+---
+import { Image } from "@astrojs/image/components";
+import {
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+} from "@heroicons/react/24/outline";
+
+const { classes } = Astro.props;
+
+const portfolio = [
+  [
+    {
+      src: "/images/portfolio/henna-hand.png",
+      alt: "the under side of a hand covered in henna",
+      width: 580,
+      height: 700,
+    },
+    {
+      src: "/images/portfolio/henna-hand-2.png",
+      alt: "henna hand covered in ochre henna",
+      width: 270,
+      height: 350,
+    },
+    {
+      src: "/images/portfolio/henna-feet.png",
+      alt: "white henna on feet",
+      width: 269,
+      height: 350,
+    },
+  ],
+];
+---
+
+<section class={classes}>
+  <h2 class="font-cinzel sm:mb-15 mb-5 text-3xl sm:text-6xl">Portfolio</h2>
+  <div class="flex grow flex-col gap-5 sm:flex-row lg:gap-10">
+    <div class="inline-flex flex-1 grow">
+      <figure class="relative flex-1">
+        <Image
+          class="h-full object-cover"
+          id="portfolio-slide-1"
+          src={portfolio[0][0].src}
+          alt={portfolio[0][0].alt}
+          width={portfolio[0][0].width}
+          height={portfolio[0][0].height}
+          format="webp"
+          quality={90}
+        />
+        <figcaption
+          class="bg-white-700 leading-121 text-brand-light pointer-events-none absolute top-0 w-full px-5 py-2.5 text-sm sm:py-5 sm:text-base"
+        >
+          Aliqua id fugiat nostrud
+          <br />
+          <span class="mt-2.5 block">01/02/2023</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="items-between flex flex-1 flex-col md:gap-20 lg:gap-0">
+      <div class="gap-6.5 mb-10 inline-flex grow sm:mb-0 lg:gap-10">
+        <figure class="flex-1">
+          <Image
+            id="portfolio-slide-2"
+            src={portfolio[0][1].src}
+            alt={portfolio[0][1].alt}
+            width={portfolio[0][1].width}
+            height={portfolio[0][1].height}
+            format="webp"
+            quality={90}
+          />
+          <figcaption class="text-brand-light mt-5 text-sm lg:text-base">
+            Aliqua id fugiat nostrud
+            <br />
+            <span class="mt-2.5 block">01/02/2023</span>
+          </figcaption>
+        </figure>
+        <figure class="flex-1">
+          <Image
+            id="portfolio-slide-3"
+            src={portfolio[0][2].src}
+            alt={portfolio[0][2].alt}
+            width={portfolio[0][2].width}
+            height={portfolio[0][2].height}
+            format="webp"
+            quality={90}
+          />
+          <figcaption
+            class="font-montse text-brand-light mt-5 text-sm lg:text-base"
+          >
+            Aliqua id fugiat nostrud
+            <br />
+            <span class="mt-2.5 block">01/02/2023</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="inline-flex w-full justify-between sm:items-end">
+        <a href="/portfolio" class="hidden underline sm:inline">VIEW ALL</a>
+        <div
+          class="gap-6.5 inline-flex w-full justify-between sm:w-auto sm:justify-start"
+        >
+          <button
+            id="port-prev-btn"
+            class="rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+            type="button"
+          >
+            <ArrowLongLeftIcon className="h-4" />
+          </button>
+          <button
+            id="port-next-btn"
+            class="rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+            type="button"
+          >
+            <ArrowLongRightIcon className="h-4" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const nextButton = document.querySelector("#port-next-btn");
+  const prevButton = document.querySelector("#port-prev-btn");
+  const slideOne = document.querySelector("#portfolio-slide-1");
+  const slideTwo = document.querySelector("#portfolio-slide-2");
+  const slideThree = document.querySelector("#portfolio-slide-3");
+  let currentIndex = 0;
+  const portfolio = [
+    [
+      {
+        src:
+          slideOne?.getAttribute("src") || "/images/portfolio/henna-hand.png",
+        alt: "the under side of a hand covered in henna",
+        width: "580",
+        height: "700",
+      },
+      {
+        src:
+          slideTwo?.getAttribute("src") || "/images/portfolio/henna-hand-2.png",
+        alt: "henna hand covered in ochre henna",
+        width: "270",
+        height: "350",
+      },
+      {
+        src:
+          slideThree?.getAttribute("src") || "/images/portfolio/henna-feet.png",
+        alt: "white henna on feet",
+        width: "269",
+        height: "350",
+      },
+    ],
+    [
+      {
+        src: "/images/portfolio/henna-bride-flowers.png",
+        alt: "a henna bride with flowers",
+        width: "580",
+        height: "700",
+      },
+      {
+        src: "/images/portfolio/two-henna-hands.png",
+        alt: "two hands covered in henna",
+        width: "270",
+        height: "350",
+      },
+      {
+        src: "/images/portfolio/henna-hand-3.png",
+        alt: "a hand covered in henna",
+        width: "269",
+        height: "350",
+      },
+    ],
+  ];
+  const checkToDisableEnable = () => {
+    if (currentIndex == 0) {
+      prevButton?.setAttribute("disabled", "");
+      if (portfolio.length > 0) nextButton?.removeAttribute("disabled");
+    }
+    if (currentIndex == portfolio.length - 1) {
+      nextButton?.setAttribute("disabled", "");
+      if (portfolio.length > 0) prevButton?.removeAttribute("disabled");
+    }
+  };
+  const changePortImages = () => {
+    slideOne?.setAttribute("src", portfolio[currentIndex][0].src);
+    slideOne?.setAttribute("alt", portfolio[currentIndex][0].alt);
+
+    slideTwo?.setAttribute("src", portfolio[currentIndex][1].src);
+    slideTwo?.setAttribute("alt", portfolio[currentIndex][1].alt);
+
+    slideThree?.setAttribute("src", portfolio[currentIndex][2].src);
+    slideThree?.setAttribute("alt", portfolio[currentIndex][2].alt);
+  };
+  checkToDisableEnable();
+  nextButton?.addEventListener("click", () => {
+    currentIndex = currentIndex + 1;
+    changePortImages();
+    checkToDisableEnable();
+  });
+  prevButton?.addEventListener("click", () => {
+    currentIndex = currentIndex - 1;
+    changePortImages();
+    checkToDisableEnable();
+  });
+</script>

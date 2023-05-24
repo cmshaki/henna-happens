@@ -1,0 +1,193 @@
+---
+import Layout from "src/layouts/Layout.astro";
+
+const twelveHours = [...Array(13).keys()];
+const sixtyMins = [...Array(60).keys()];
+---
+
+<Layout>
+  <main class="sm:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16">
+    <h2 class="font-cinzel sm:mb-15 mb-5 mt-10 text-3xl sm:text-6xl">
+      Appointment Request
+    </h2>
+    <form class="gap-15 flex flex-col">
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="first-name">First Name</label><input
+            id="first-name"
+            class="border-brand-light-500 focus:border-brand-light inline-flex w-full border p-3.5"
+            name="first-name"
+            placeholder="First"
+            autocomplete="given-name"
+            type="text"
+          />
+        </div>
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="last-item">Last Name</label><input
+            id="last-name"
+            class="border-brand-light-500 focus:border-brand-light inline-flex w-full border p-3.5"
+            name="last-name"
+            placeholder="Last"
+            autocomplete="family-name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="first-name">Email</label><input
+            id="email"
+            class="border-brand-light-500 focus:border-brand-light inline-flex w-full border p-3.5"
+            name="email"
+            placeholder="Enter Your Email"
+            autocomplete="email"
+            type="email"
+          />
+        </div>
+        <div class="hidden flex-1 sm:flex"></div>
+      </div>
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="last-item">Phone</label><input
+            id="phone"
+            class="border-brand-light-500 focus:border-brand-light inline-flex w-full border p-3.5"
+            name="phone"
+            placeholder="Enter Your Phone"
+            autocomplete="tel"
+            type="tel"
+          />
+        </div>
+        <div class="hidden flex-1 sm:flex"></div>
+      </div>
+      <div>
+        <div class="mb-7">Preferred Method of Contact</div>
+        <input
+          class="border-brand-black mb-5 h-4 w-4 rounded-lg border"
+          type="checkbox"
+          name="prefer-email"
+          id="prefer-email"
+        />
+        <label for="prefer-email">Email</label><br />
+        <input
+          class="border-brand-black mb-5 h-4 w-4 border"
+          type="checkbox"
+          name="prefer-text"
+          id="prefer-text"
+        />
+        <label for="prefer-text">Text</label><br />
+        <input
+          class="border-brand-black h-4 w-4 border"
+          type="checkbox"
+          name="prefer-call"
+          id="prefer-call"
+        />
+        <label for="prefer-call">Call</label><br />
+      </div>
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="first-name">Appointment Date</label><input
+            id="appointment-date"
+            class="border-brand-light-500 focus:border-brand-light inline-flex w-full border p-3.5"
+            name="appointment-date"
+            placeholder="MM/DD/YY"
+            type="date"
+          />
+        </div>
+        <div class="flex flex-1 flex-col gap-5">
+          <label for="last-item">Appointment Time</label>
+          <div class="flex grow gap-7">
+            <select
+              id="hours"
+              class="placeholder:text-brand-light-500 border-brand-light-500 shrink-1 focus:border-brand-light flex-1 border p-3.5"
+              name="hours"
+              title="hours"
+            >
+              <option disabled selected>HH</option>
+              {
+                twelveHours.map((hr, index) => (
+                  <option>{index > 9 ? hr : `0${hr}`}</option>
+                ))
+              }
+            </select>
+            <select
+              id="minutes"
+              class="placeholder:text-brand-light-500 border-brand-light-500 shrink-1 focus:border-brand-light flex-1 border p-3.5"
+              name="minutes"
+              title="minutes"
+            >
+              <option disabled selected>MM</option>
+              {
+                sixtyMins.map((min, index) => (
+                  <option>{index > 9 ? min : `0${min}`}</option>
+                ))
+              }
+            </select>
+            <select
+              id="am-pm"
+              class="placeholder:text-brand-light-500 border-brand-light-500 shrink-1 focus:border-brand-light flex-1 border p-3.5"
+              name="am-pm"
+              title="am-pm"
+            >
+              <option value="AM" selected>AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="mb-7">Appointment Location</div>
+        <input
+          class="border-brand-black mb-5 h-4 w-4 rounded-lg border"
+          type="checkbox"
+          name="prv-residency"
+          id="prv-residency"
+        />
+        <label for="prv-residency">Private Residency</label><br />
+        <input
+          class="border-brand-black mb-5 h-4 w-4 border"
+          type="checkbox"
+          name="hotel-venue"
+          id="hotel-venue"
+        />
+        <label for="hotel-venue">Hotel or Venue</label><br />
+        <input
+          class="border-brand-black h-4 w-4 border"
+          type="checkbox"
+          name="other"
+          id="other"
+        />
+        <label for="other">Other</label><br />
+      </div>
+      <div class="flex grow flex-col gap-10 sm:flex-row">
+        <div class="flex-1">
+          <select
+            class="placeholder:text-brand-light-500 border-brand-light-500 shrink-1 focus:border-brand-light w-full flex-1 border py-3.5 pl-3.5 pr-7"
+            name="color"
+            id="color"
+          >
+            <option value="red" selected>Henna(Brown/Red)</option>
+            <option value="white">Henna(White)</option>
+          </select>
+        </div>
+        <div class="flex-1">
+          <select
+            class="placeholder:text-brand-light-500 border-brand-light-500 shrink-1 focus:border-brand-light w-full flex-1 border py-3.5 pl-3.5 pr-7"
+            name="app-type"
+            id="app-type"
+          >
+            <option value="private" selected>Private Appointment (2hr)</option>
+            <option value="regular">Regular Appointment (2hr)</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <textarea
+          class="border-brand-light-500 w-full border px-5 py-3.5"
+          name="details"
+          placeholder="Examples: Location of design(s), design descriptions, how many people, etc."
+          id="details"
+          rows="3"></textarea>
+      </div>
+    </form>
+  </main>
+</Layout>

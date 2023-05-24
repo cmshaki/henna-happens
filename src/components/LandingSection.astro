@@ -1,0 +1,53 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const { classes } = Astro.props;
+---
+
+<main class={classes}>
+  <div class="inline-flex flex-1 flex-col justify-center">
+    <div class="xl:absolute xl:z-10">
+      <p class="text-brand-light hidden sm:block">
+        All of our body art services are<br />completely freehand, temporary, &
+        fun
+      </p>
+      <h1
+        class="font-cinzel text-3.5xl leading-none sm:mb-10 sm:mt-5 sm:text-4xl lg:text-7xl"
+      >
+        DISCOVER BEA<span
+          class="xl:bg-gradient-to-r xl:from-black xl:from-30% xl:via-white xl:via-30% xl:to-white xl:to-100% xl:bg-clip-text xl:text-transparent"
+          >U</span
+        ><span class="xl:text-white">TY</span><br /><i class="font-corm">with</i
+        >
+        HENNA
+      </h1>
+      <a
+        href="/request"
+        class="leading-140 hidden bg-black px-20 py-4 text-white sm:inline-block"
+        type="button"
+      >
+        Book Now
+      </a>
+    </div>
+  </div>
+  <div class="inline-flex flex-1 flex-col">
+    <figure>
+      <Image
+        src="/images/main-photo.png"
+        alt="A lady wearing henna"
+        format="webp"
+        width={580}
+        height={680}
+        quality={90}
+      />
+      <figcaption class="font-montse text-brand-light mt-5">
+        All of our body art services are completely<br />freehand, temporary, &
+        fun for everyone.
+      </figcaption>
+    </figure>
+    <button
+      class="leading-140 mt-5 inline-block bg-black px-20 py-4 text-white sm:hidden"
+      type="button">Book Now</button
+    >
+  </div>
+</main>

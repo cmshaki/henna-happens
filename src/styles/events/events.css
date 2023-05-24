@@ -1,0 +1,29 @@
+label {
+  cursor: pointer;
+}
+
+/* Hide when checked */
+.events-hide-input:checked ~ div:nth-child(3) > label:nth-child(2),
+.events-hide-input:checked ~ div:nth-child(3) > label:nth-child(4) {
+  display: none;
+}
+.events-hide-input:checked ~ div:nth-child(3) > label:nth-child(1),
+.events-hide-input:checked ~ div:nth-child(3) > label:nth-child(3) {
+  display: block;
+}
+.events-hide-input:checked ~ figure {
+  display: none;
+}
+
+/* Show when unchecked */
+.events-hide-input ~ div:nth-child(3) > label:nth-child(2),
+.events-hide-input ~ div:nth-child(3) > label:nth-child(4) {
+  display: block;
+}
+.events-hide-input ~ div:nth-child(3) > label:nth-child(1),
+.events-hide-input ~ div:nth-child(3) > label:nth-child(3) {
+  display: none;
+}
+.events-hide-input ~ figure {
+  display: block;
+}

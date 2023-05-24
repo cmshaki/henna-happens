@@ -1,0 +1,25 @@
+---
+import { Image } from "@astrojs/image/components";
+import Layout from "../layouts/Layout.astro";
+import portfolio from "../data/portfolio.json";
+import OneToFour from "../components/OneToFour.astro";
+import TwoWideToOne from "src/components/TwoWideToOne.astro";
+import OneToOne from "src/components/OneToOne.astro";
+
+const imageArr1 = portfolio.slice(0, 5);
+const imageArr2 = portfolio.slice(5, 8);
+const imageArr3 = portfolio.slice(8, 10);
+---
+
+<Layout path="/portfolio">
+  <main class="sm:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16">
+    <h2 class="font-cinzel sm:mb-15 mb-5 mt-10 text-3xl sm:text-6xl">
+      Portfolio
+    </h2>
+    <div class="sm:gap-25 flex flex-col gap-5">
+      <OneToFour imageArr={imageArr1} />
+      <TwoWideToOne imageArr={imageArr2} />
+      <OneToOne imageArr={imageArr3} />
+    </div>
+  </main>
+</Layout>

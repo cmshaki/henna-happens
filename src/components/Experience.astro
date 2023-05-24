@@ -1,0 +1,98 @@
+---
+import { Disclosure, Transition } from "@headlessui/react";
+import { ArrowLongUpIcon } from "@heroicons/react/24/outline";
+import { Image } from "@astrojs/image/components";
+import experience from "../data/experience.json";
+
+const getImageOrder = (index: number) => {
+  switch (index) {
+    case 0:
+      return "order-first basis-full ";
+      break;
+    case 1:
+      return "order-last pl-2.5 sm:pl-0  sm:order-none basis-2/4 sm:basis-0 flex-1 sm:flex-none ";
+      break;
+    case 2:
+      return "order-4 pr-2.5 sm:pr-0  sm:order-none basis-2/4 sm:basis-0 flex-1 sm:flex-none ";
+      break;
+    case 3:
+      return "order-2 pr-2.5 sm:pr-0 sm:order-none basis-2/4 sm:basis-0 flex-1 sm:flex-none ";
+      break;
+    case experience.length - 1:
+      return "order-3 pl-2.5 sm:pl-0 sm:order-none basis-2/4 sm:basis-0 flex-1 sm:flex-none ";
+      break;
+
+    default:
+      break;
+  }
+};
+---
+
+<div class="mx-auto flex max-w-7xl grow justify-end">
+  <div class="hidden flex-1 sm:block"></div>
+  <ul class="sm:flex-3 right-0 flex grow flex-row flex-wrap sm:block">
+    {
+      experience.map(({ title, img }, index) => (
+        <li
+          class={`${getImageOrder(
+            index
+          )}sm:order-none sm:after:w-120% sm:after:border-brand-button-disabled relative flex flex-col justify-between sm:py-10 sm:after:absolute sm:after:bottom-0 sm:after:left-0 sm:after:right-0 sm:after:h-1 sm:after:border-b sm:after:content-['']`}
+        >
+          <div class="hidden w-full justify-between sm:inline-flex">
+            <button class="exp-btn font-cinzel inline-flex w-full justify-between text-left text-xl leading-none sm:pointer-events-none sm:text-4xl">
+              <span class="pointer-events-auto">{title}</span>
+              <ArrowLongUpIcon className="pointer-events-auto h-8 shrink-0 rotate-45" />
+            </button>
+          </div>
+          <figure
+            id={`exp-fig-${index}`}
+            class={`${
+              index > 0 ? "flex-1 grow sm:flex-none sm:grow-0 " : ""
+            }transition-all flex flex-col gap-5 duration-500 sm:invisible sm:max-h-0 sm:gap-0 sm:pt-5 sm:opacity-0`}
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={img.width}
+              height={img.height}
+              format="webp"
+              quality={90}
+              {...(index > 0
+                ? {
+                    class: "object-cover sm:object-contain flex-1 sm:flex-none",
+                  }
+                : Object.create(null))}
+            />
+            <figcaption class="shrink-1 h-20 sm:hidden">{title}</figcaption>
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<script>
+  const allExpBtn = document.querySelectorAll(".exp-btn");
+  let fig: any;
+  let svg: any;
+  allExpBtn.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      fig = document.querySelector("#exp-fig-" + index);
+      svg = btn.querySelector("svg");
+      if (fig?.hasAttribute("style")) {
+        fig?.removeAttribute("style");
+      } else {
+        fig?.setAttribute(
+          "style",
+          "opacity: 1; visibility: visible; max-height: none"
+        );
+      }
+      if (btn.hasAttribute("style")) {
+        btn.removeAttribute("style");
+        svg.removeAttribute("style");
+      } else {
+        btn.setAttribute("style", "color: #A1BD74");
+        svg.setAttribute("style", "transform: rotate(225deg)");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import CustomTabs from "../components/CustomTabs/CustomTabs";
+import CustomTabs from "src/components/CustomTabs.astro";
+import QA from "../components/QA/QA";
+import PopUp from "../components/PopUp.astro";
+import PortfolioSlide from "../components/PortfolioSlide.astro";
+import LandingSection from "../components/LandingSection.astro";
+import KarissaSmithSection from "../components/KarissaSmithSection.astro";
+import RequestAnAppointmentSection from "../components/RequestAnAppointmentSection.astro";
+import LocationSection from "../components/LocationSection.astro";
+
+// Image imports
+import { Image } from "@astrojs/image/components";
+
+//@ts-ignore
+// import mainPhoto from "public:images/Main Photo.png?w=auto&format=webp&q=90";
+import TestimonialSlide from "src/components/TestimonialSlide.astro";
+// w=200 gives a set width
+// format=webp will convert the image to a webp file for you on build
+// q=90 is the quality that the image will be reduced to, try to use 90 everywhere on all images where possible
+
+// when using this import method, you'll have to put //@ts-ignore at the top
+// so VS Code (or your editor of choice) doesn't throw syntax errors
+---
+
+<Layout>
+  {/* Landing Page Section */}
+  <LandingSection
+    classes="sm:mb-15 xl:mb-35 mx-auto mb-7 flex w-full max-w-7xl grow flex-col gap-5 p-5 sm:mt-10 sm:flex-row sm:gap-10 sm:px-16"
+  />
+
+  {/* Portfolio Section */}
+  <PortfolioSlide
+    classes="sm:mb-15 xl:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16"
+  />
+
+  {/* Testimonials Section */}
+  <TestimonialSlide
+    classes="sm:mb-15 xl:mb-35 relative mx-auto mb-7 max-w-7xl p-5 sm:px-16"
+  />
+
+  {/* Karissa Smith Section */}
+  <section
+    class="sm:mb-15 xl:mb-35 mx-auto mb-7 max-w-7xl p-5 sm:px-16 sm:py-10"
+  >
+    <KarissaSmithSection />
+  </section>
+
+  {/* Services Section */}
+  <CustomTabs sectionId="services-section" classes="sm:mb-15 xl:mb-35 mb-7" />
+
+  {/* Request an Appointment Section */}
+  <RequestAnAppointmentSection
+    classes="mb-17 sm:mb-15 xl:mb-35"
+    src="/images/lady-with-henna-on-arm.jpeg"
+  />
+
+  {/* Location Section */}
+  <LocationSection
+    sectionId="location-section"
+    classes="mb-17 sm:mb-15 xl:mb-35 relative"
+  />
+
+  {/* QA Section */}
+  <QA
+    sectionId="faq-section"
+    classes="sm:mb-15 xl:mb-35 relative mb-10 overflow-hidden"
+    client:load
+  />
+
+  {/* Pop Up Section */}
+  <PopUp />
+</Layout>

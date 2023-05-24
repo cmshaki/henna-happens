@@ -1,0 +1,106 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const { classes, sectionId } = Astro.props;
+---
+
+<section id={sectionId} class={classes}>
+  <div class="mx-auto max-w-7xl sm:px-16">
+    <h2 class="font-cinzel mb-5 px-5 text-3xl sm:mb-0 sm:px-0 sm:text-6xl">
+      Location
+    </h2>
+    <div class="flex grow flex-col gap-10 sm:flex-row">
+      <div class="flex-1">
+        <div class="px-5">
+          <div
+            class="mb-5 mt-0 inline-flex items-center gap-5 sm:mt-20 sm:items-start"
+          >
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border sm:mt-2"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:text-4xl">
+              Keep It Simple in Waikiki
+            </h3>
+          </div>
+          <div class="flex grow gap-7 sm:gap-0">
+            <div class="hidden flex-1 sm:block"></div>
+            <div class="flex-1">
+              <div class="ml-8.5 sm:mb-15 mb-10 sm:ml-0">
+                <p class="mb-5">
+                  227 Lewers St R-103Honolulu, HI 96815United States
+                </p>
+                <p>
+                  This week's schedule: <br /><span class="font-semibold"
+                    >27th Friday 4-8pm</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-5">
+          <div class="mb-5 inline-flex items-center gap-5 sm:items-start">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border sm:mt-2"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:text-4xl">
+              Kaka'ako Farmer's Market
+            </h3>
+          </div>
+          <div class="flex grow gap-7 sm:gap-0">
+            <div class="hidden flex-1 sm:block"></div>
+            <div class="flex-1">
+              <div class="ml-8.5 sm:mb-15 mb-10 sm:ml-0">
+                <p class="mb-5">210 Ward Ave,Honolulu, HI 96814United States</p>
+                <p>
+                  This week's schedule:<br /><span class="font-semibold"
+                    >Saturday 8am-12pm</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-5">
+          <div class="mb-5 inline-flex items-center gap-5 sm:items-start">
+            <span
+              class="rounded-50% border-brand-black h-3.5 w-3.5 shrink-0 border sm:mt-2"
+            ></span>
+            <h3 class="font-cinzel text-xl leading-none sm:text-4xl">
+              Beachside Luxe in 'Alohilani
+            </h3>
+          </div>
+          <div class="flex grow gap-7 sm:gap-0">
+            <div class="hidden flex-1 sm:block"></div>
+            <div class="flex-1">
+              <div class="ml-8.5 sm:ml-0">
+                <p class="mb-5">
+                  The Shops at ‘Alohilani Resort Waikiki Beach2490 Kalākaua Ave,<br
+                  />
+                  Honolulu HI 96815 United States​
+                </p>
+                <p>
+                  This week's schedule:<br /><span class="font-semibold"
+                    >Saturday 8am-12pm</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-first flex-1 overflow-y-hidden sm:order-none">
+        <figure class="bottom-0 right-0 xl:absolute">
+          <Image
+            src="/images/rectangle-37.png"
+            alt="A lady dressed in a red silk dress lying down"
+            format="webp"
+            width={700}
+            height={800}
+            quality={90}
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

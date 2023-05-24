@@ -1,0 +1,87 @@
+label {
+  cursor: pointer;
+}
+
+/* Section titles */
+input#tabs-radio-1:checked ~ div > h2:after {
+  content: "services";
+}
+
+input#tabs-radio-2:checked ~ div > h2:after,
+input#tabs-radio-3:checked ~ div > h2:after {
+  content: "make an appointment";
+}
+
+/* Styling for the labels */
+input#tabs-radio-1 ~ div:nth-child(5) > label:first-child > div,
+input#tabs-radio-2 ~ div:nth-child(5) > label:nth-child(2) > div,
+input#tabs-radio-3 ~ div:nth-child(5) > label:last-child > div {
+  color: #e5e7eb;
+}
+
+input#tabs-radio-1:checked ~ div:nth-child(5) > label:first-child > div,
+input#tabs-radio-2:checked ~ div:nth-child(5) > label:nth-child(2) > div,
+input#tabs-radio-3:checked ~ div:nth-child(5) > label:last-child > div {
+  color: #383533;
+}
+
+.panel-container {
+  position: relative;
+}
+
+/* Transitions */
+.custom-tab-panel {
+  transition: opacity ease-in 0.2s, visibility ease-in 0.2s;
+}
+/* Viewing styles for each tab */
+
+input#tabs-radio-1:checked ~ div:nth-child(6) {
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  order: 6;
+}
+input#tabs-radio-1:checked ~ div:nth-child(7) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+input#tabs-radio-1:checked ~ div:nth-child(8) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+
+input#tabs-radio-2:checked ~ div:nth-child(6) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+input#tabs-radio-2:checked ~ div:nth-child(7) {
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  order: 6;
+}
+input#tabs-radio-2:checked ~ div:nth-child(8) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+
+input#tabs-radio-3:checked ~ div:nth-child(6) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+input#tabs-radio-3:checked ~ div:nth-child(7) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+input#tabs-radio-3:checked ~ div:nth-child(8) {
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  order: 6;
+}

@@ -1,0 +1,131 @@
+---
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Image } from "@astrojs/image/components";
+
+// let popUpState = "0";
+
+// const storedPopupState = localStorage.getItem("popup");
+// const openDelayed = setTimeout(() => setIsOpen(true), 1000);
+// if (!storedPopupState || storedPopupState == "1") {
+//   localStorage.setItem("popup", "0");
+// } else {
+//   localStorage.setItem("popup", "1");
+// }
+// if (storedPopupState != popUpState) popUpState = storedPopupState || "0";
+---
+
+<div
+  id="popup-modal"
+  class="invisible fixed inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-500"
+>
+  <div id="popup-overlay" class="bg-black-700 absolute inset-0"></div>
+  <div
+    class="z-10 mx-auto flex max-w-3xl grow flex-col px-5 sm:flex-row sm:px-16"
+  >
+    <div class="order-last flex-1 overflow-hidden sm:order-first">
+      <Image
+        id="popup-image"
+        class="h-96 w-full object-cover object-top sm:h-auto"
+        src={`/images/henna-pop-up-lady${
+          /* popUpState == "1" ? "-2" : "" */ ""
+        }.png`}
+        alt="A young lady covered in henna"
+        width={332}
+        height={500}
+        quality={90}
+        format="webp"
+      />
+    </div>
+    <div
+      class="px-6.5 relative flex flex-1 flex-col justify-center bg-white py-5 text-center sm:py-0"
+    >
+      <button
+        id="popup-modal-button"
+        class="text-brand-button-disabled absolute right-0 top-0 mr-1 mt-1 block h-6 w-6 outline-0"
+      >
+        <XMarkIcon aria-hidden="true" />
+      </button>
+      <div class="font-cinzel mb-5 text-2xl font-bold leading-none">
+        <span id="popup-head">
+          Want to make
+          <br />
+          your event
+          <br />
+          unforgettable?
+        </span>
+      </div>
+      <div class="sm:mb-17 mb-5">
+        <span id="popup-content">
+          Invite a henna artist to your event, and amaze your guests with
+          incredible body paintings!
+        </span>
+      </div>
+      <button class="w-full bg-black py-4 text-white">
+        <a id="popup-cta" href="/request"> Invite an Artist</a>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const hasBeenShown = localStorage.getItem("hasBeenShown");
+  if (!hasBeenShown) {
+    const modal = document.getElementById("popup-modal");
+    const overlay = document.getElementById("popup-overlay");
+    const btn = document.getElementById("popup-modal-button");
+    const content2 = [
+      "/images/henna-pop-up-lady-2.png",
+      "Get 5% off",
+      "Have you never tried henna before? Invite a master for your first event with a 5% discount!",
+      "Get a discount",
+    ];
+    let contentShown = localStorage.getItem("contentShown");
+    if (!contentShown) {
+      localStorage.setItem(
+        "contentShown",
+        (Math.floor(Math.random() * 2) + 1).toString()
+      );
+    }
+    contentShown = localStorage.getItem("contentShown");
+    if (contentShown == "2") {
+      document.getElementById("popup-image")?.setAttribute("src", content2[0]);
+      const popupHead = document.getElementById("popup-head");
+      const popupContent = document.getElementById("popup-content");
+      const popupCta = document.getElementById("popup-cta");
+      if (popupHead) popupHead.innerHTML = content2[1];
+      if (popupContent) popupContent.innerHTML = content2[2];
+      if (popupCta) popupCta.innerHTML = content2[3];
+      localStorage.setItem("contentShown", "1");
+    } else {
+      localStorage.setItem("contentShown", "2");
+    }
+
+    btn?.addEventListener("click", () => modal?.removeAttribute("style"), {
+      once: true,
+    });
+    overlay?.addEventListener("click", () => modal?.removeAttribute("style"), {
+      once: true,
+    });
+    setTimeout(
+      () => modal?.setAttribute("style", "opacity: 1; visibility: visible"),
+      60000
+    );
+    document.addEventListener(
+      "onkeydown",
+      (evt: any) => {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ("key" in evt) {
+          isEscape = evt.key === "Escape" || evt.key === "Esc";
+        } else {
+          isEscape = evt["keyCode"] === 27;
+        }
+        if (isEscape) {
+          modal?.setAttribute("style", "display: none");
+        }
+      },
+      { once: true }
+    );
+    localStorage.setItem("hasBeenShown", "true");
+  }
+</script>

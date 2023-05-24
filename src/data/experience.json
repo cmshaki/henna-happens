@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Nique Miller, Pro Surfer",
+    "img": {
+      "src": "/images/about/nique.jpeg",
+      "alt": "nique miller a pro surfer",
+      "width": 900,
+      "height": 521
+    }
+  },
+  {
+    "title": "Netflix’s Murder Mystery 2 with Jennifer Aniston & Adam Sandler",
+    "img": {
+      "src": "/images/about/murder-mystery.jpg",
+      "alt": "movie poster of murder mystery",
+      "width": 2722,
+      "height": 4032
+    }
+  },
+  {
+    "title": "Samson Ebukam, Pro Football Player",
+    "img": {
+      "src": "/images/about/samson.jpeg",
+      "alt": "samson ebukam nfl player",
+      "width": 1078,
+      "height": 1200
+    }
+  },
+  {
+    "title": "Reno Wilson, Actor",
+    "img": {
+      "src": "/images/about/reno.jpeg",
+      "alt": "reno wilson the actor",
+      "width": 1600,
+      "height": 1176
+    }
+  },
+  {
+    "title": "Alicia Kelly, Pro Surfer",
+    "img": {
+      "src": "/images/about/alicia.png",
+      "alt": "alicia kelly pro surfer",
+      "width": 781,
+      "height": 1003
+    }
+  }
+]

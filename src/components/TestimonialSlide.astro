@@ -1,0 +1,208 @@
+---
+import { Image } from "@astrojs/image/components";
+import {
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+} from "@heroicons/react/24/outline";
+
+const { classes } = Astro.props;
+const testimonials = [
+  [
+    {
+      src: "/images/testimonial/secondary-photo.png",
+      alt: "the under side of a hand covered in henna",
+    },
+    {
+      src: "/images/testimonial/hero-photo.png",
+      alt: "henna hand covered in ochre henna",
+    },
+  ],
+];
+---
+
+<section class={classes}>
+  <h2 class="font-cinzel sm:mb-15 mb-7 text-3xl sm:text-6xl">Testimonials</h2>
+  <div class="flex grow flex-wrap sm:gap-5 lg:gap-10">
+    <div class="basis-full sm:hidden">
+      <h3
+        class="font-cinzel mb-0 mt-7 text-xl leading-none sm:mb-10 sm:text-4xl"
+      >
+        <span class="font-cinzel text-6.5xl float-left sm:hidden">“</span>
+        Amet minim molliteniam
+        <br />
+        consequat sunt
+      </h3>
+      <p class="border-brand-green leading-140 mb-10 border-s-4 pl-5 sm:mb-12">
+        <i>
+          Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui
+          esse pariatur duis deserunt mollit dolore cillum minim tempor enim.
+          Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate
+          aute id deserunt nisi.
+        </i>
+      </p>
+    </div>
+    <div
+      class="order-2 inline-flex basis-2/4 flex-col pl-5 sm:order-none sm:flex-1 sm:pl-0"
+    >
+      <h3
+        class="font-cinzel text-6.5xl absolute left-0 hidden leading-none sm:left-4 sm:block sm:text-9xl"
+      >
+        “
+      </h3>
+      <h3
+        class="font-cinzel mb-0 mt-7 hidden text-xl leading-none sm:mb-10 sm:block sm:text-4xl"
+      >
+        <span class="font-cinzel text-6.5xl float-left sm:hidden">“</span>
+        Amet minim molliteniam
+        <br />
+        consequat sunt
+      </h3>
+      <p
+        class="border-brand-green leading-140 mb-10 hidden border-s-4 pl-5 sm:mb-12 sm:block"
+      >
+        <i>
+          Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui
+          esse pariatur duis deserunt mollit dolore cillum minim tempor enim.
+          Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate
+          aute id deserunt nisi.
+        </i>
+      </p>
+      <span
+        class="text-brand-light hidden text-xl font-semibold sm:mb-5 sm:inline xl:mb-0"
+      >
+        Flores, Juanita
+      </span>
+      <div
+        class="inline-flex items-end justify-between sm:flex-1 sm:gap-5 xl:gap-0"
+      >
+        <div class="gap-6.5 hidden flex-1 sm:inline-flex">
+          <button
+            class="test-prev-btn rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+            type="button"
+          >
+            <ArrowLongLeftIcon className="h-4" />
+          </button>
+          <button
+            class="test-next-btn rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+            type="button"
+          >
+            <ArrowLongRightIcon className="h-4" />
+          </button>
+        </div>
+        <figure>
+          <Image
+            id="test-slide-1"
+            src={testimonials[0][0].src}
+            alt="Wedding couple"
+            format="webp"
+            width={270}
+            height={271}
+            quality={90}
+          />
+        </figure>
+      </div>
+    </div>
+    <div
+      class="gap-6.5 order-1 inline-flex basis-2/4 pr-5 sm:order-none sm:flex-1 sm:grow sm:gap-0 sm:pr-0"
+    >
+      <figure class="inline-flex flex-1 overflow-hidden">
+        <Image
+          id="test-slide-2"
+          class="h-full object-cover"
+          src={testimonials[0][1].src}
+          alt="Bride covered in henna"
+          format="webp"
+          width={480}
+          height={480}
+          quality={90}
+        />
+      </figure>
+    </div>
+    <div class="order-3 mt-10 inline-flex basis-full sm:hidden">
+      <span class="hidden underline sm:inline">VIEW ALL</span>
+      <div
+        class="gap-6.5 inline-flex w-full justify-between sm:w-auto sm:justify-start"
+      >
+        <button
+          class="test-prev-btn rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+          type="button"
+        >
+          <ArrowLongLeftIcon className="h-4" />
+        </button>
+        <button
+          class="test-next-btn rounded-50% border-brand-black disabled:border-brand-button-disabled disabled:text-brand-button-disabled border p-5 lg:p-8"
+          type="button"
+        >
+          <ArrowLongRightIcon className="h-4" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  let testIndex = 0;
+  const allNextButtons = document.querySelectorAll(".test-next-btn");
+  const allPrevButtons = document.querySelectorAll(".test-prev-btn");
+  const testSlideOne = document.querySelector("#test-slide-1");
+  const testSlideTwo = document.querySelector("#test-slide-2");
+  const testimonials = [
+    [
+      {
+        src:
+          testSlideOne?.getAttribute("src") ||
+          "/images/testimonial/secondary-photo.png",
+        alt: "the under side of a hand covered in henna",
+      },
+      {
+        src:
+          testSlideTwo?.getAttribute("src") ||
+          "/images/testimonial/hero-photo.png",
+        alt: "henna hand covered in ochre henna",
+      },
+    ],
+    [
+      {
+        src: "/images/testimonial/two-henna-hands.png",
+        alt: "a henna bride with flowers",
+      },
+      {
+        src: "/images/testimonial/henna-bride-flowers.png",
+        alt: "two hands covered in henna",
+      },
+    ],
+  ];
+  const disableEnable = () => {
+    if (testIndex == 0) {
+      allPrevButtons?.forEach((btn) => btn?.setAttribute("disabled", ""));
+      if (testimonials.length > 0)
+        allNextButtons?.forEach((btn) => btn?.removeAttribute("disabled"));
+    }
+    if (testIndex == testimonials.length - 1) {
+      allNextButtons?.forEach((btn) => btn?.setAttribute("disabled", ""));
+      if (testimonials.length > 0)
+        allPrevButtons?.forEach((btn) => btn?.removeAttribute("disabled"));
+    }
+  };
+  const changeTestImages = () => {
+    testSlideOne?.setAttribute("src", testimonials[testIndex][0].src);
+    testSlideOne?.setAttribute("alt", testimonials[testIndex][0].alt);
+
+    testSlideTwo?.setAttribute("src", testimonials[testIndex][1].src);
+    testSlideTwo?.setAttribute("alt", testimonials[testIndex][1].alt);
+  };
+  disableEnable();
+  allNextButtons?.forEach((btn) =>
+    btn?.addEventListener("click", () => {
+      testIndex = testIndex + 1;
+      changeTestImages();
+      disableEnable();
+    })
+  );
+  allPrevButtons?.forEach((btn) =>
+    btn?.addEventListener("click", () => {
+      testIndex = testIndex - 1;
+      changeTestImages();
+      disableEnable();
+    })
+  );
+</script>
